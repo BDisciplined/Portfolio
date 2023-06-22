@@ -1,8 +1,22 @@
 $(document).ready(function () {
+  let dropDownActive = false;
+
   applyActiveClass();
 
-  $("nav").on("click", function () {
+  $("nav a").on("click", function () {
     applyActiveClass();
+  });
+
+  $(".small-nav1 .years").on("click", function () {
+    if (!dropDownActive) {
+      $(this).css("color", "var(--main-back-color)");
+      $($(this).find(".li-small1")).css("display", "flex");
+      dropDownActive = true;
+    } else {
+      $(this).css("color", "");
+      $($(this).find(".li-small1")).css("display", "");
+      dropDownActive = false;
+    }
   });
 
   function applyActiveClass() {
