@@ -6,6 +6,10 @@
   font-family: ManropeEB;
   src: url("assets/fonts/Manrope-ExtraBold.ttf");
 }
+@font-face {
+  font-family: Poppins;
+  src: url("assets/fonts/Poppins-Regular.ttf");
+}
 
 @keyframes hello-shape {
   0%,
@@ -45,7 +49,7 @@
   }
 }
 
-* {
+body {
   font-family: Manrope;
 }
 
@@ -79,6 +83,7 @@ nav {
   justify-content: center;
   align-items: center;
 
+  font-family: Poppins;
   font-size: 1.5rem;
   color: var(--main-back-color);
   background-color: var(--main-color);
