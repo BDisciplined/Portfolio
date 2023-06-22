@@ -13,13 +13,23 @@ $(document).ready(function () {
     }
   });
 
+  $("ul").on("click", function () {
+    if ($(this).hasClass("we-here")) {
+      $(this).css("color", "var(--main-color)");
+    }
+  });
+
   $(".small-nav1 .years").on("click", function () {
     if (!dropDownActive) {
-      $(this).css("color", "var(--main-back-color)");
+      if (!$("ul").hasClass("we-here")) {
+        $(this).css("color", "var(--main-back-color)");
+      }
       $($(this).find(".li-small1")).css("display", "flex");
       dropDownActive = true;
     } else {
-      $(this).css("color", "");
+      if (!$("ul").hasClass("we-here")) {
+        $(this).css("color", "var(--main-back-color-darker)");
+      }
       $($(this).find(".li-small1")).css("display", "");
       dropDownActive = false;
     }
