@@ -1,41 +1,42 @@
 $(document).ready(function () {
   let dropDownActive = false;
 
-  applyActiveClass();
+  whosActive();
 
   $("nav a").on("click", function () {
-    applyActiveClass();
+    whosActive();
   });
 
-  $("a").on("mouseover", function () {
+  $(".small-nav1 a, .desktop-nav a").on("mouseover", function () {
     if ($(this).hasClass("we-here")) {
       $(this).css("color", "var(--main-color)");
     }
   });
 
-  $("ul").on("click", function () {
-    if ($(this).hasClass("we-here")) {
-      $(this).css("color", "var(--main-color)");
-    }
-  });
-
+  /* small1 school years dropdown */
   $(".small-nav1 .years").on("click", function () {
     if (!dropDownActive) {
-      if (!$("ul").hasClass("we-here")) {
+      if (!$(this).hasClass("we-here")) {
         $(this).css("color", "var(--main-back-color)");
+      } else {
+        $(this).css("color", "var(--main-color)");
       }
       $($(this).find(".li-small1")).css("display", "flex");
       dropDownActive = true;
     } else {
-      if (!$("ul").hasClass("we-here")) {
+      if (!$(this).hasClass("we-here")) {
         $(this).css("color", "var(--main-back-color-darker)");
+      } else {
+        $(this).css("color", "var(--main-color)");
       }
       $($(this).find(".li-small1")).css("display", "");
       dropDownActive = false;
     }
   });
 
-  function applyActiveClass() {
+  /* small2 */
+
+  function whosActive() {
     let where = window.location.href.toString();
     console.log(where + " open");
 
@@ -51,6 +52,7 @@ $(document).ready(function () {
       } else {
         $(".years").addClass("we-here");
         $(".y1 a").css("color", "var(--main-back-color)");
+        $(".y1 a").css("text-decoration", "underline");
       }
     } else if (where.includes("22-23")) {
       if ($(".small-nav1 nav").css("display") == "none") {
@@ -58,6 +60,7 @@ $(document).ready(function () {
       } else {
         $(".years").addClass("we-here");
         $(".y2 a").css("color", "var(--main-back-color)");
+        $(".y2 a").css("text-decoration", "underline");
       }
     } else if (where.includes("23-24")) {
       if ($(".small-nav1 nav").css("display") == "none") {
@@ -65,6 +68,7 @@ $(document).ready(function () {
       } else {
         $(".years").addClass("we-here");
         $(".y3 a").css("color", "var(--main-back-color)");
+        $(".y3 a").css("text-decoration", "underline");
       }
     }
   }
