@@ -1,5 +1,7 @@
 $(document).ready(function () {
   let dropDownActive = false;
+  let barsClicked = false;
+  let yearsClicked = false;
 
   whosActive();
 
@@ -34,7 +36,30 @@ $(document).ready(function () {
     }
   });
 
-  /* small2 */
+  /* small2 years dropdown */
+  $(".menu").on("click", function () {
+    $(".menu-container").toggleClass("open");
+    if (!barsClicked) {
+      $(".menu img").attr("src", "assets/imgs/icons/close-menu-small2.png");
+      barsClicked = true;
+    } else {
+      $(".menu img").attr("src", "assets/imgs/icons/menu-small2.png");
+      barsClicked = false;
+    }
+  });
+
+  $(".option").on("click", function () {
+    if ($(this).find(".years").length > 0) {
+      $(".years-menu").toggleClass("open");
+      if (!yearsClicked) {
+        $($(this).find("img")).css("rotate", "90deg");
+        yearsClicked = true;
+      } else {
+        $($(this).find("img")).css("rotate", "");
+        yearsClicked = false;
+      }
+    }
+  });
 
   function whosActive() {
     let where = window.location.href.toString();

@@ -132,12 +132,11 @@ a {
 }
 
 nav a:hover,
-.small-nav1 .years:hover {
+.small-nav1 ul.years:hover {
   color: var(--main-back-color);
 }
 
-.years {
-  padding: 0;
+ul.years {
   margin: 0;
   list-style-type: none;
   display: flex;
@@ -251,8 +250,8 @@ nav a:hover,
 
 /* RESPONSIVE small2*/
 .small-nav2 nav {
-  --font-small2: 1.5rem;
-
+  --font-small2: 1rem;
+  display: none;
   padding: 30px;
   font-size: var(--font-small2);
   display: none;
@@ -269,6 +268,7 @@ nav a:hover,
   }
   .small-nav2 nav {
     display: grid;
+    --button-inline-padding: 10px;
   }
   .we-here::before,
   .we-here::after {
@@ -289,14 +289,12 @@ nav a:hover,
   color: var(--main-color);
   background-color: var(--main-back-color);
   border: 1px solid var(--main-color);
-  padding-inline: 10px;
-  /*  border-radius: 100vw; */
-}
-.small-nav2 .home a:hover {
-  color: var(--main-back-color);
-  background-color: var(--main-color);
+  padding-inline: var(--button-inline-padding);
 }
 
+.menu-wrapper {
+  position: relative;
+}
 .menu {
   height: 100%;
 
@@ -307,4 +305,98 @@ nav a:hover,
 .menu img {
   cursor: pointer;
   height: calc(var(--font-small2) + 8px);
+}
+
+.menu-container {
+  right: 0;
+  position: absolute;
+
+  width: 10rem;
+  height: 0px;
+  overflow: hidden;
+
+  margin-top: 20px;
+  transition: all 100ms linear;
+}
+.open {
+  height: 257px;
+}
+
+.years-menu.open {
+  height: 130px;
+}
+
+.option {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  cursor: pointer;
+
+  padding: var(--button-inline-padding);
+  margin-bottom: -1px;
+
+  border-width: 1px 0 1px 0;
+  border-style: solid;
+  border-color: var(--main-color);
+}
+
+.option .about,
+.option .years {
+  border-width: 0 1px 1px 0;
+  border-style: solid;
+  border-color: transparent var(--main-color) var(--main-color) transparent;
+
+  padding: 5px;
+  border-radius: 100vw;
+}
+.option img {
+  border-width: 1px 0 0 1px;
+  border-style: solid;
+  border-color: var(--main-color) transparent transparent var(--main-color);
+
+  padding: 5px;
+  border-radius: 100vw;
+
+  transition: all 100ms;
+}
+
+.menu-container .years::before {
+  content: "";
+}
+.menu-container img {
+  height: calc(var(--font-small2) - 2pt);
+  margin-right: auto;
+}
+
+.small-nav2 .years {
+  position: relative;
+}
+
+.years-menu {
+  position: absolute;
+  right: -11px;
+
+  height: 0;
+  width: 10rem;
+
+  margin-top: 20px;
+  transition: all 100ms linear;
+
+  overflow: hidden;
+}
+.years-menu .option {
+  border-width: 0 0 0 1px;
+  border-style: solid;
+  border-color: transparent transparent transparent var(--main-color);
+
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.option a {
+  color: var(--main-color);
+}
+.option a:hover {
+  color: var(--main-color);
 }
