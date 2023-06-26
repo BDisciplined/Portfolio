@@ -136,26 +136,31 @@ nav a:hover,
   color: var(--main-back-color);
 }
 
+.desktop-nav ul.years {
+  padding-inline-start: 0;
+}
+
 ul.years {
   margin: 0;
   list-style-type: none;
   display: flex;
 }
 
-.hello-wrapper {
-  height: 90vh;
+.wrapper {
+  height: 80vh;
+  width: 50vw;
 
   padding: 0;
-  margin: 0;
+  margin: auto;
+  margin-top: 10vh;
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
 .hello {
-  --my-size: 45vh;
+  --my-size: 40vh;
   font-family: ManropeEB;
   font-size: 100%;
 
@@ -184,6 +189,16 @@ ul.years {
 
   background-color: var(--main-color);
   animation: shadow-shape 10s infinite reverse;
+}
+.hello-content {
+  margin-top: 5vh;
+
+  font-size: 2.8vh;
+}
+.citation {
+  font-size: 2.2vh;
+
+  width: 70vw;
 }
 
 /* RESPONSIVE small1*/
@@ -259,7 +274,7 @@ ul.years {
   background-color: var(--main-back-color);
 }
 
-@media (max-width: 576px) {
+@media (max-width: 606px) {
   .desktop-nav {
     display: none;
   }
@@ -275,8 +290,15 @@ ul.years {
     display: none;
   }
 
-  .hello-wrapper {
+  .wrapper {
     height: 80vh;
+  }
+  .hello-content {
+    font-size: 2vh;
+  }
+  .citation {
+    margin-top: 5vh;
+    font-size: 1.5vh;
   }
 }
 
@@ -360,9 +382,6 @@ ul.years {
   transition: all 100ms;
 }
 
-.menu-container .years::before {
-  content: "";
-}
 .menu-container img {
   height: calc(var(--font-small2) - 2pt);
   margin-right: auto;
