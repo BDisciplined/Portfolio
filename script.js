@@ -44,6 +44,7 @@ $(document).ready(function () {
       barsClicked = true;
     } else {
       $(".menu img").attr("src", "assets/imgs/icons/menu-small2.png");
+      $(".years-menu").removeClass("open");
       barsClicked = false;
     }
   });
