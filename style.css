@@ -61,8 +61,9 @@ body {
   padding: 0;
   margin: 0;
   text-align: center;
+  overflow-x: hidden;
 
-  font-size: 4rem;
+  font-size: 1.5rem;
   font-family: Manrope;
 
   background-color: var(--main-back-color);
@@ -159,6 +160,10 @@ ul.years {
   align-items: center;
 }
 
+.hello-wrapper {
+  font-size: 4rem;
+}
+
 .hello {
   --my-size: 40vh;
   font-family: ManropeEB;
@@ -195,12 +200,39 @@ ul.years {
 
   font-size: 2.8vh;
 }
-.citation {
-  font-size: 2.2vh;
 
-  width: 70vw;
+.main-title {
+  font-family: ManropeEB;
 }
 
+.about-wrapper {
+  text-align: justify;
+}
+
+section {
+  /* border-width: 1px;
+  border-color: transparent var(--main-color) var(--main-color) transparent;
+  border-style: solid;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px; */
+
+  color: var(--main-color);
+  /* background-color: #9dc3e67c; */
+
+  width: 90vw;
+
+  padding: 3rem;
+  margin-block: 0.5rem;
+}
+
+.citation {
+  font-size: 2.2vh;
+  text-align: center;
+
+  padding-top: 40vh;
+  padding-bottom: 10vh;
+  width: 70vw;
+}
 /* RESPONSIVE small1*/
 .small-nav1 nav {
   display: none;
