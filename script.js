@@ -62,6 +62,26 @@ $(document).ready(function () {
     }
   });
 
+  /* about me cards effect */
+  let cards = document.getElementsByClassName("card");
+  let click = 0;
+
+  $(".arrow").on("click", function () {
+    if ($(this).hasClass("arrow-right")) {
+      if (click < cards.length - 1) {
+        click++;
+
+        $(cards[cards.length - click]).css("transform", "rotateY(-90deg)");
+      }
+    } else if ($(this).hasClass("arrow-left")) {
+      if (click > 0) {
+        $(cards[cards.length - click]).css("transform", "");
+        click--;
+      }
+    }
+  });
+
+  /* functions */
   function whosActive() {
     let where = window.location.href.toString();
     console.log(where + " open");
